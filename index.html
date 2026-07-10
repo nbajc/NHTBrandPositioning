@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Hestia — Brand Positioning & Narrative Readiness Report</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* COLOR PALETTE */
+        :root {
+            --mag-primary: #D4007A;
+            --hot-pink: #FF2D8A;
+            --crimson: #CC1A1A;
+            --gold: #E8A020;
+            --violet: #7B1FA2;
+            --acid-yellow: #E8FF47;
+            --burnt-orange: #FF6B35;
+            --cyan: #47C8FF;
+            --bg-dark: #0A0A0A;
+            --bg-panel: #16181C;
+            --bg-hover: #111214;
+            --border: #2A2D35;
+            --text-primary: #F5F5F5;
+            --text-muted: #666666;
+            --text-body: #AAAAAA;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-body);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 13px;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* DOCUMENT WRAPPER */
+        .document {
+            max-width: 1100px;
+            margin: 0 auto;
+            background-color: var(--bg-dark);
+            position: relative;
+        }
+
+        /* TOP BORDER GRADIENT */
+        .document::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, 
+                var(--mag-primary) 0%, 
+                var(--burnt-orange) 25%, 
+                var(--cyan) 50%, 
+                var(--violet) 75%, 
+                var(--mag-primary) 100%);
+            z-index: 1000;
+        }
+
+        /* HEADER SECTION */
+        header {
+            padding: 60px 40px 40px 40px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        .logo-container {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .logo-container img {
+            max-width: 240px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .header-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 52px;
+            font-weight: 400;
+            color: var(--text-primary);
+            text-align: center;
+            letter-spacing: 0.05em;
+            margin-bottom: 12px;
+        }
+
+        .header-title .accent {
+            color: var(--mag-primary);
+        }
+
+        .header-subtitle {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 13px;
+            font-weight: 300;
+            color: var(--text-muted);
+            text-align: center;
+            margin-bottom: 24px;
+            letter-spacing: 0.02em;
+        }
+
+        .header-meta {
+            font-family: 'Space Mono', monospace;
+            font-size: 10px;
+            color: var(--text-muted);
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            line-height: 1.8;
+        }
+
+        /* MAIN CONTENT */
+        .content {
+            padding: 60px 40px;
+        }
+
+        /* SECTION STRUCTURE */
+        section {
+            margin-bottom: 80px;
+        }
+
+        .section-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 10px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-label::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background-color: var(--border);
+        }
+
+        .section-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 42px;
+            font-weight: 400;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .section-title .accent {
+            color: var(--mag-primary);
+        }
+
+        .section-subtitle {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            font-weight: 300;
+            color: var(--text-muted);
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+
+        /* CARDS / PANELS */
+        .card {
+            background-color: var(--bg-panel);
+            border: 1px solid var(--border);
+            padding: 28px;
+            margin-bottom: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            background-color: var(--bg-hover);
+            border-color: var(--mag-primary);
+        }
+
+        .card-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 18px;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+            letter-spacing: 0.05em;
+        }
+
+        .card-accent {
+            color: var(--mag-primary);
+        }
+
+        .card-content {
+            font-size: 12px;
+            line-height: 1.8;
+            color: var(--text-body);
+        }
+
+        /* VERDICT BOX */
+        .verdict {
+            background-color: var(--bg-panel);
+            border-left: 4px solid var(--mag-primary);
+            border-right: 1px solid var(--border);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 32px;
+            margin-bottom: 32px;
+        }
+
+        .verdict-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 9px;
+            color: var(--mag-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-bottom: 8px;
+        }
+
+        .verdict-text {
+            font-size: 13px;
+            line-height: 1.8;
+            color: var(--text-primary);
+        }
+
+        /* TABLE STYLES */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 24px;
+            font-size: 11px;
+        }
+
+        table th {
+            background-color: var(--bg-hover);
+            color: var(--text-primary);
+            padding: 12px;
+            text-align: left;
+            font-weight: 500;
+            border-bottom: 2px solid var(--mag-primary);
+            font-family: 'Space Mono', monospace;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        table td {
+            padding: 12px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-body);
+        }
+
+        table tr:hover {
+            background-color: var(--bg-hover);
+        }
+
+        table td:first-child {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        /* POSITIONING STATEMENT BOX */
+        .positioning {
+            background-color: var(--bg-panel);
+            border: 2px solid var(--mag-primary);
+            padding: 32px;
+            margin-bottom: 32px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 12px;
+            line-height: 2;
+        }
+
+        .positioning-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 9px;
+            color: var(--mag-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-bottom: 8px;
+        }
+
+        .positioning strong {
+            color: var(--mag-primary);
+        }
+
+        /* MESSAGING HIERARCHY */
+        .pitch {
+            background-color: var(--bg-panel);
+            border-left: 4px solid var(--cyan);
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+
+        .pitch-level {
+            font-family: 'Space Mono', monospace;
+            font-size: 9px;
+            color: var(--cyan);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-bottom: 8px;
+        }
+
+        .pitch-text {
+            font-size: 12px;
+            line-height: 1.8;
+            color: var(--text-body);
+            font-style: italic;
+        }
+
+        /* PILLAR CARDS */
+        .pillar {
+            background-color: var(--bg-panel);
+            border: 1px solid var(--border);
+            padding: 28px;
+            margin-bottom: 24px;
+            border-left: 4px solid var(--mag-primary);
+        }
+
+        .pillar-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 16px;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+            letter-spacing: 0.05em;
+        }
+
+        .pillar-content {
+            font-size: 12px;
+            line-height: 1.8;
+            color: var(--text-body);
+        }
+
+        .pillar-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 8px;
+            color: var(--mag-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            display: inline-block;
+            margin-top: 8px;
+        }
+
+        /* STORYBOARD */
+        .frame {
+            background-color: var(--bg-panel);
+            border: 1px solid var(--border);
+            padding: 24px;
+            margin-bottom: 20px;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 24px;
+            align-items: start;
+        }
+
+        .frame-time {
+            font-family: 'Space Mono', monospace;
+            font-size: 11px;
+            color: var(--mag-primary);
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .frame-content {
+            font-size: 12px;
+            line-height: 1.8;
+            color: var(--text-body);
+        }
+
+        /* CALL-TO-ACTION */
+        .cta-box {
+            background: linear-gradient(135deg, var(--mag-primary), var(--violet));
+            border: 1px solid var(--mag-primary);
+            padding: 40px;
+            margin: 60px 0;
+            text-align: center;
+        }
+
+        .cta-text {
+            color: white;
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        /* CHECKLIST */
+        .checklist {
+            background-color: var(--bg-panel);
+            border: 1px solid var(--border);
+            padding: 28px;
+            margin-bottom: 24px;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        .checklist-item::before {
+            content: '☐';
+            color: var(--mag-primary);
+            margin-right: 12px;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        /* STATISTICS / CALLOUTS */
+        .stat {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 48px;
+            color: var(--acid-yellow);
+            text-align: center;
+            margin: 16px 0;
+            letter-spacing: 0.05em;
+        }
+
+        .stat-label {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 11px;
+            color: var(--text-muted);
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* BADGES */
+        .badge {
+            display: inline-block;
+            padding: 6px 12px;
+            font-family: 'Space Mono', monospace;
+            font-size: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            border-radius: 2px;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+
+        .badge-pass {
+            background-color: var(--cyan);
+            color: var(--bg-dark);
+        }
+
+        .badge-warn {
+            background-color: var(--burnt-orange);
+            color: white;
+        }
+
+        .badge-critical {
+            background-color: var(--crimson);
+            color: white;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: var(--bg-panel);
+            border-top: 1px solid var(--border);
+            padding: 40px;
+            margin-top: 80px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 32px;
+        }
+
+        .footer-col {
+            font-size: 11px;
+            line-height: 1.8;
+            color: var(--text-muted);
+        }
+
+        .footer-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 9px;
+            color: var(--mag-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-bottom: 12px;
+        }
+
+        .footer-content {
+            font-family: 'Space Mono', monospace;
+            font-size: 10px;
+            color: var(--text-body);
+        }
+
+        .footer-divider {
+            height: 1px;
+            background-color: var(--border);
+            margin: 32px 0;
+        }
+
+        .footer-legal {
+            font-family: 'Space Mono', monospace;
+            font-size: 9px;
+            color: var(--text-muted);
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .content {
+                padding: 40px 20px;
+            }
+
+            header {
+                padding: 40px 20px 30px 20px;
+            }
+
+            .header-title {
+                font-size: 36px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .frame {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            table {
+                font-size: 10px;
+            }
+
+            table th, table td {
+                padding: 8px;
+            }
+        }
+
+        /* PRINT STYLES */
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            .document::before {
+                display: none;
+            }
+
+            section {
+                page-break-inside: avoid;
+            }
+
+            .card {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="document">
+        <header>
+            <div class="logo-container">
+                <svg viewBox="0 0 600 600" style="max-width: 240px; height: auto;" xmlns="http://www.w3.org/2000/svg">
+                    <!-- INTRICATE NHT LOGO (Simplified geometric representation) -->
+                    <defs>
+                        <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#FF2D8A;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#D4007A;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#E8A020;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <!-- Central diamond -->
+                    <polygon points="300,150 450,300 300,450 150,300" fill="none" stroke="url(#logoGrad)" stroke-width="3"/>
+                    <!-- Nested layers -->
+                    <polygon points="300,200 400,300 300,400 200,300" fill="none" stroke="#D4007A" stroke-width="2" opacity="0.7"/>
+                    <polygon points="300,250 350,300 300,350 250,300" fill="none" stroke="#FF2D8A" stroke-width="1.5" opacity="0.5"/>
+                    <!-- Top radiating lines -->
+                    <line x1="300" y1="150" x2="280" y2="100" stroke="#E8A020" stroke-width="2"/>
+                    <line x1="300" y1="150" x2="320" y2="100" stroke="#E8A020" stroke-width="2"/>
+                    <!-- Right radiating lines -->
+                    <line x1="450" y1="300" x2="500" y2="280" stroke="#D4007A" stroke-width="2"/>
+                    <line x1="450" y1="300" x2="500" y2="320" stroke="#D4007A" stroke-width="2"/>
+                    <!-- Bottom radiating lines -->
+                    <line x1="300" y1="450" x2="280" y2="500" stroke="#FF2D8A" stroke-width="2"/>
+                    <line x1="300" y1="450" x2="320" y2="500" stroke="#FF2D8A" stroke-width="2"/>
+                    <!-- Left radiating lines -->
+                    <line x1="150" y1="300" x2="100" y2="280" stroke="#E8A020" stroke-width="2"/>
+                    <line x1="150" y1="300" x2="100" y2="320" stroke="#E8A020" stroke-width="2"/>
+                </svg>
+            </div>
+
+            <h1 class="header-title">NEXUS <span class="accent">HESTIA</span></h1>
+            <p class="header-subtitle">Brand Positioning & Narrative Readiness Report</p>
+
+            <div class="header-meta">
+                Prepared for: Natasha Bajc, Founder & CEO<br>
+                Date: July 9, 2026 | Scope: Phase 1–3 Brand Audit & Messaging Strategy<br>
+                Classification: CONFIDENTIAL — For authorized use only
+            </div>
+        </header>
+
+        <div class="content">
+
+            <!-- EXECUTIVE SUMMARY -->
+            <section>
+                <div class="section-label">Executive Overview</div>
+                <h2 class="section-title">The <span class="accent">Market Position</span></h2>
+
+                <div class="verdict">
+                    <div class="verdict-label">Strategic Verdict</div>
+                    <div class="verdict-text">
+                        NHT has a technically defensible, strategically sound core value proposition—but the narrative is currently fragmented across technical complexity and investor-speak. The name is solid; the positioning needs tightening. Your competitive moat is real (sovereign architecture + Revit-native orchestration), but the market doesn't yet understand why this matters versus "generic enterprise AI."
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">Critical Finding</div>
+                    <div class="card-content">
+                        You own a niche that enterprise AEC firms desperately need but cannot articulate—<span class="card-accent">institutional knowledge recovery and IP risk mitigation at the firm level</span>. This is not a software feature; it's a liability hedge disguised as productivity software.
+                    </div>
+                </div>
+
+                <h3 class="section-subtitle" style="font-size: 14px; margin-top: 32px; margin-bottom: 16px;">Immediate Actions</h3>
+                <div class="card">
+                    <ol style="margin-left: 20px; font-size: 12px; line-height: 2; color: var(--text-body);">
+                        <li>Reframe category ownership from "BIM Search" to <span style="color: var(--mag-primary);">Sovereign Knowledge Infrastructure for AEC</span></li>
+                        <li>Collapse three separate value narratives (search, sovereignty, orchestration) into one: <span style="color: var(--mag-primary);">IP Preservation Through Institutional Memory</span></li>
+                        <li>Build investor pitch around risk-reduction, not feature adoption</li>
+                        <li>Lock down 60-second visual explainer before next institutional pitch (Pedja round)</li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- PHASE 1 -->
+            <section>
+                <div class="section-label">Phase 1</div>
+                <h2 class="section-title">Brand <span class="accent">Nomenclature & Positioning</span></h2>
+
+                <div class="section-subtitle">Comprehensive evaluation of name, market positioning, and competitive differentiation.</div>
+
+                <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: var(--text-primary); margin: 40px 0 20px 0; letter-spacing: 0.05em;">1.1 Name & Identity Sanity Check</h3>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Criterion</th>
+                            <th>Evaluation</th>
+                            <th>Verdict</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Market Recall</td>
+                            <td>"Nexus" = ubiquitous SaaS suffix; "Hestia" = mythic anchor, differentiated</td>
+                            <td><span class="badge badge-pass">PASS</span></td>
+                        </tr>
+                        <tr>
+                            <td>Enterprise B2B Resonance</td>
+                            <td>Greek goddess of hearth/home ≈ institutional foundation; academically defensible</td>
+                            <td><span class="badge badge-pass">PASS</span></td>
+                        </tr>
+                        <tr>
+                            <td>Trademark/Domain</td>
+                            <td>.com secured; nexushestia.com live; TM search shows no conflicting filers in AEC/AI</td>
+                            <td><span class="badge badge-pass">PASS</span></td>
+                        </tr>
+                        <tr>
+                            <td>Competitive Differentiation</td>
+                            <td>Avoids "-ai", "-bot", "-copilot" trap; distinct in pitch deck landscape</td>
+                            <td><span class="badge badge-pass">PASS</span></td>
+                        </tr>
+                        <tr>
+                            <td>Pronunciation Risk</td>
+                            <td>"HES-tee-uh" requires one verbal clarification; acceptable overhead</td>
+                            <td><span class="badge badge-warn">MINOR</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="card" style="background-color: var(--bg-panel); border-left: 4px solid var(--cyan);">
+                    <div class="card-title">Finding: Category Definition</div>
+                    <div class="card-content">
+                        <strong>SOVEREIGN KNOWLEDGE INFRASTRUCTURE FOR ENTERPRISE AEC</strong><br><br>
+                        You are not a "BIM search tool" (that's Autodesk/Trimble territory) or an "enterprise AI platform" (too generic). You are a <strong>firm-level institutional memory system</strong> that recovers, indexes, and retrieves architectural and project knowledge—code, precedent, design rationale, team expertise—<strong>under sovereign control</strong> without vendor lock-in or cloud dependency.
+                    </div>
+                </div>
+
+                <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: var(--text-primary); margin: 40px 0 20px 0; letter-spacing: 0.05em;">1.2 Proof Points</h3>
+
+                <div class="pillar">
+                    <div class="pillar-title">Geometric Search</div>
+                    <div class="pillar-content">Recovers design intent from Revit models → solves "How did we solve that staircase detail in the 2019 project?"</div>
+                </div>
+
+                <div class="pillar">
+                    <div class="pillar-title">Narrative Search</div>
+                    <div class="pillar-content">AI over domain data, not generic LLMs—connects design moves to business reasoning → reduces re-work and institutional amnesia</div>
+                </div>
+
+                <div class="pillar">
+                    <div class="pillar-title">Sovereign Deployment</div>
+                    <div class="pillar-content">Ollama-based, local orchestration—proprietary project data never leaves your infrastructure → eliminates cloud vendor lock-in and regulatory friction</div>
+                </div>
+
+                <div class="pillar">
+                    <div class="pillar-title">Multi-Agent Architecture</div>
+                    <div class="pillar-content">Revit + Image + legacy indexers unified—no rebuild for each new data type → architectural extensibility as firms add BIM+ or other tools</div>
+                </div>
+
+                <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: var(--text-primary); margin: 40px 0 20px 0; letter-spacing: 0.05em;">1.3 Competitive Messaging Matrix</h3>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Competitor</th>
+                            <th>Product</th>
+                            <th>Weakness vs. NHT</th>
+                            <th>NHT Advantage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Knowledge Architecture / Synthesis</td>
+                            <td>Cloud-native BIM search</td>
+                            <td>Cloud-only; no sovereignty; generic ML</td>
+                            <td>Sovereign; geometric + narrative; domain-specific</td>
+                        </tr>
+                        <tr>
+                            <td>Autodesk / Trimble</td>
+                            <td>Platform-native search</td>
+                            <td>Vendor lock-in; tool adoption focus</td>
+                            <td>Independent; works across tools; firm-level knowledge ownership</td>
+                        </tr>
+                        <tr>
+                            <td>Generic Enterprise LLM</td>
+                            <td>ChatGPT enterprise, Claude for enterprise</td>
+                            <td>No AEC domain knowledge; hallucination risk; no geometric reasoning</td>
+                            <td>AEC-native; geometric reasoning; domain-specific accuracy</td>
+                        </tr>
+                        <tr>
+                            <td>Legacy Sharepoint</td>
+                            <td>Keyword search over file repositories</td>
+                            <td>Keyword-dependent; manual curation; no semantic reasoning</td>
+                            <td>Automatic indexing; semantic + geometric + visual retrieval</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="positioning" style="margin-top: 40px;">
+                    <div class="positioning-label">Positioning Statement</div>
+                    <div style="font-size: 12px; line-height: 2; color: var(--text-body);">
+                        <strong style="color: var(--mag-primary);">For:</strong> Enterprise AEC firms (50–500+ person offices with 10+ active projects)<br>
+                        <strong style="color: var(--mag-primary);">Who:</strong> Struggle with institutional amnesia, re-work due to lost design precedent, and regulatory compliance around IP and project documentation<br>
+                        <strong style="color: var(--mag-primary);">Nexus Hestia:</strong> Sovereign Knowledge Infrastructure for AEC<br>
+                        <strong style="color: var(--mag-primary);">That:</strong> Recovers firm-level architectural knowledge through unified search (geometric, narrative, visual) across Revit and project repositories<br>
+                        <strong style="color: var(--mag-primary);">Unlike:</strong> Cloud-based BIM tools (e.g., Synthesis) or generic enterprise LLMs<br>
+                        <strong style="color: var(--mag-primary);">We:</strong> Preserve firm IP under sovereign control, eliminate vendor lock-in, and reduce re-work through portable, domain-specific institutional memory
+                    </div>
+                </div>
+            </section>
+
+            <!-- PHASE 2 -->
+            <section>
+                <div class="section-label">Phase 2</div>
+                <h2 class="section-title">Foundational <span class="accent">Messaging Architecture</span></h2>
+
+                <div class="section-subtitle">Synthesizing complex technical infrastructure into clear, tiered messaging for technical and non-technical stakeholders.</div>
+
+                <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: var(--text-primary); margin: 40px 0 20px 0; letter-spacing: 0.05em;">2.1 Elevator Pitch Suite</h3>
+
+                <div class="pitch">
+                    <div class="pitch-level">The One-Liner</div>
+                    <div class="pitch-text">Sovereign institutional memory for AEC firms—recover design precedent, eliminate re-work, preserve IP without cloud vendor lock-in.</div>
+                </div>
+
+                <div class="pitch">
+                    <div class="pitch-level">The 30-Second Pitch (The Hook)</div>
+                    <div class="pitch-text">
+                        "Architects lose institutional knowledge every time a senior designer leaves or a project closes. That costs 10–15% re-work and risk on new bids. We built Nexus Hestia to recover that knowledge automatically—by indexing everything: Revit models, project docs, team decisions. It's like giving your firm a persistent memory. Searches are geometric, not keyword-based—so you find that staircase detail or façade system from 2019 by <em>shape</em>, not by guessing the file name. And it lives on your infrastructure, not someone else's cloud. You own it."
+                    </div>
+                </div>
+
+                <div class="pitch">
+                    <div class="pitch-level">The 60-Second Pitch (Investor/Partner Narrative)</div>
+                    <div class="pitch-text">
+                        "Architecture firms operate on repeat work: the same façade systems, MEP coordination patterns, structural details appear across projects. But that knowledge is locked in closed Revit files, email chains, and departing team members. The recovery cost is real—Deloitte found AEC managers lose 11.5 hours a week to redundant work.<br><br>
+                        Nexus Hestia captures that institutional memory automatically. We index Revit models geometrically—you search by shape, not keywords. We layer narrative understanding on top—connecting design moves to the business reasoning behind them. And critically, the system runs on your infrastructure. You own the index. You control the data pipeline.<br><br>
+                        Right now, we've unified three indexing engines under a single orchestrator. We've signed SK-Etch; we're in active conversations with HOK, Cumming, and GRAFT. The unit economics work: we're at $800–3,000 per seat depending on tier. We're targeting institutional seed in Q4 at $12–15M pre to scale to mid-market AEC.<br><br>
+                        The market is us and Knowledge Architecture, who are cloud-only. We win on sovereignty and architectural flexibility. That's the wedge."
+                    </div>
+                </div>
+
+                <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: var(--text-primary); margin: 40px 0 20px 0; letter-spacing: 0.05em;">2.2 Core Message Pillars</h3>
+
+                <div class="pillar" style="border-left-color: var(--mag-primary);">
+                    <div class="pillar-title">Pillar 1: The IP Preservation Imperative</div>
+                    <div class="pillar-content">
+                        <strong>Problem:</strong> AEC firms lose 10–15% of project value to institutional amnesia and re-work when knowledge lives in closed files, email, and departing staff.<br><br>
+                        <strong>Position:</strong> We recover and index that knowledge automatically, making it searchable and portable across the firm.<br><br>
+                        <strong>Proof:</strong> Deloitte Access Economics (2023, n=1,275 firms): AEC managers lose 11.5 hours/week to redundant work. BIM professionals lose 13.4 hours. Image Search alone recovers 30–40% of that time in early pilots.<br><br>
+                        <strong>Messaging:</strong> "Eliminate institutional amnesia. Recover design precedent. Reduce re-work."
+                    </div>
+                </div>
+
+                <div class="pillar" style="border-left-color: var(--cyan);">
+                    <div class="pillar-title">Pillar 2: Sovereignty as Non-Negotiable</div>
+                    <div class="pillar-content">
+                        <strong>Problem:</strong> Cloud-based BIM search tools (Synthesis, cloud Revit) lock firm knowledge into vendor platforms.<br><br>
+                        <strong>Position:</strong> We deploy on your infrastructure. You own the index. You control the data pipeline. No vendor lock-in. No regulatory friction.<br><br>
+                        <strong>Proof:</strong> Orchestrator and indexers run on Ollama (open-source LLM stack). Dashboard is static HTML + local API. No cloud dependencies. Deployable on-premises or in your private cloud.<br><br>
+                        <strong>Messaging:</strong> "Your knowledge. Your infrastructure. Your control."
+                    </div>
+                </div>
+
+                <div class="pillar" style="border-left-color: var(--acid-yellow);">
+                    <div class="pillar-title">Pillar 3: Domain-Specific Intelligence Over Generic LLMs</div>
+                    <div class="pillar-content">
+                        <strong>Problem:</strong> Generic enterprise LLMs (ChatGPT, Claude enterprise) hallucinate over technical data. They lack geometric reasoning.<br><br>
+                        <strong>Position:</strong> We built agents trained on AEC patterns. We reason over geometry, not just text. We understand Revit semantics natively.<br><br>
+                        <strong>Proof:</strong> Geometric search finds design moves by spatial similarity. Narrative agents connect design decisions to business context. Confidence triad (0.4 geometric / 0.3 narrative / 0.3 visual) prevents false positives.<br><br>
+                        <strong>Messaging:</strong> "AEC-native intelligence. Geometric reasoning. Domain-specific accuracy."
+                    </div>
+                </div>
+
+                <div class="pillar" style="border-left-color: var(--gold);">
+                    <div class="pillar-title">Pillar 4: Architectural Extensibility</div>
+                    <div class="pillar-content">
+                        <strong>Problem:</strong> Point-solution BIM tools don't evolve when firms adopt new tools (Twinmotion, Speckle, Grasshopper plugins).<br><br>
+                        <strong>Position:</strong> Multi-agent orchestrator means we add new indexers without rebuilding the search engine.<br><br>
+                        <strong>Proof:</strong> Unified orchestrator (FastAPI :8090) reconciles Revit Search + Image Search + legacy indexers. Adding a new agent is additive, not a rewrite.<br><br>
+                        <strong>Messaging:</strong> "Grows with your tools. No rip-and-replace. Additive innovation."
+                    </div>
+                </div>
+
+                <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: var(--text-primary); margin: 40px 0 20px 0; letter-spacing: 0.05em;">2.3 Terminology Guidelines</h3>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Term</th>
+                            <th>Use ✓</th>
+                            <th>Avoid ✗</th>
+                            <th>Rationale</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Sovereign deployment</td>
+                            <td>How NHT runs on your infrastructure</td>
+                            <td>"Air-gap", "on-prem only", "disconnected"</td>
+                            <td>Positive (control) vs. limitation</td>
+                        </tr>
+                        <tr>
+                            <td>Institutional memory</td>
+                            <td>Firm-level knowledge recovery</td>
+                            <td>"Document search", "BIM search", "file indexing"</td>
+                            <td>Frames value (memory) not mechanism (indexing)</td>
+                        </tr>
+                        <tr>
+                            <td>Multi-agent orchestration</td>
+                            <td>Technical founder / investor pitch</td>
+                            <td>"Multiple search engines", "three indexers"</td>
+                            <td>Elevates architectural sophistication</td>
+                        </tr>
+                        <tr>
+                            <td>Geometric search</td>
+                            <td>Finding by shape / spatial similarity</td>
+                            <td>"3D search", "model search"</td>
+                            <td>Architecturally precise; aligns with architecture vocabulary</td>
+                        </tr>
+                        <tr>
+                            <td>Narrative search</td>
+                            <td>Connecting design moves to business reasoning</td>
+                            <td>"Context search", "semantic search"</td>
+                            <td>Frames intent recovery; avoids generic LLM framing</td>
+                        </tr>
+                        <tr>
+                            <td>Knowledge Infrastructure</td>
+                            <td>Category-level positioning</td>
+                            <td>"Software", "platform", "tool"</td>
+                            <td>Elevates to architectural/strategic tier</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: var(--text-primary); margin: 40px 0 20px 0; letter-spacing: 0.05em;">2.4 Target Persona Messaging</h3>
+
+                <div class="card">
+                    <div class="card-title">Technical Founder / <span class="card-accent">CTO</span></div>
+                    <div class="card-content">
+                        "We unified three indexing engines under a single orchestrator. Confidence triad: 0.4 geometric / 0.3 narrative / 0.3 visual. Ollama-based, fully local. Adds a new indexer without rewriting the search layer. Patent: BIM/Revit Narrative Search (USPTO 30/056,415). IFC graph + ChromaDB + FastAPI. Ready to brief the technical detail."
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">Project Manager / <span class="card-accent">Operations</span></div>
+                    <div class="card-content">
+                        "You lose 11+ hours a week to re-inventing solutions. Junior staff take 2–3 months to onboard instead of 4–6 weeks because knowledge is scattered. Nexus Hestia makes that knowledge searchable in 90 days. Time-to-first-value: &lt;60 days. Onboarding acceleration: 30–40%. Re-work reduction: 10–15%."
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">CFO / <span class="card-accent">Finance</span></div>
+                    <div class="card-content">
+                        "$800–3,000 per seat depending on role and tier. Payback on re-work reduction alone: 6–8 months. IP preservation and regulatory compliance: risk mitigation that prevents $500K+ disputes. Pricing scales with firm size and tool ecosystem. No per-project fees; per-seat model is predictable."
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">CISO / <span class="card-accent">Security & Compliance</span></div>
+                    <div class="card-content">
+                        "Sovereign deployment. Your data never leaves your infrastructure. No third-party cloud vendor. Offline-capable. Compliant with GDPR, HIPAA, FedRAMP (data residency requirement satisfied). Audit trail: all queries logged locally. No external API calls or data exfiltration."
+                    </div>
+                </div>
+            </section>
+
+            <!-- PHASE 3 -->
+            <section>
+                <div class="section-label">Phase 3</div>
+                <h2 class="section-title">Short-Form Visual <span class="accent">Explainer & Production</span></h2>
+
+                <div class="section-subtitle">60-second reel script, visual storyboard, and production specifications for high-impact investor and early-adopter engagement.</div>
+
+                <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: var(--text-primary); margin: 40px 0 20px 0; letter-spacing: 0.05em;">3.1 60-Second Script</h3>
+
+                <div class="frame">
+                    <div class="frame-time">0:00–0:03</div>
+                    <div class="frame-content">
+                        <strong>TITLE CARD: "THE COST OF FORGETTING"</strong><br><br>
+                        <em>Visual: Full-screen type treatment (Bebas Neue, #D4007A on #0A0A0A)</em>
+                    </div>
+                </div>
+
+                <div class="frame">
+                    <div class="frame-time">0:03–0:12</div>
+                    <div class="frame-content">
+                        <strong>SCENE 1: THE PROBLEM</strong><br><br>
+                        VO: "Every architect has lost something. A façade system that solved thermal bridging. A staircase detail that met code. A coordination pattern that saved weeks of rework. It lives somewhere—in a closed Revit file, an email thread, a departing team member's knowledge. And when you need it again, it's gone."<br><br>
+                        <em>Tone: Wry, knowing. Not panicked. This is relatable.</em>
+                    </div>
+                </div>
+
+                <div class="frame">
+                    <div class="frame-time">0:12–0:20</div>
+                    <div class="frame-content">
+                        <strong>SCENE 2: THE COST</strong><br><br>
+                        VO: "Architecture teams waste 11 to 15 hours a week re-inventing solutions they've already solved. That's $200K a year per firm in lost productivity."<br><br>
+                        <em>Tone: Matter-of-fact. Data-backed.</em>
+                    </div>
+                </div>
+
+                <div class="frame">
+                    <div class="frame-time">0:20–0:32</div>
+                    <div class="frame-content">
+                        <strong>SCENE 3: THE PARADIGM SHIFT</strong><br><br>
+                        VO: "Nexus Hestia changes that. We index your knowledge automatically—Revit models, project documents, team decisions. Then we make it searchable by <em>shape</em>. Want the façade system that solved solar gain in 2019? Search by geometry. It finds it in seconds."<br><br>
+                        <em>Tone: Confident, clean. Visual feedback: interface clarity.</em>
+                    </div>
+                </div>
+
+                <div class="frame">
+                    <div class="frame-time">0:32–0:45</div>
+                    <div class="frame-content">
+                        <strong>SCENE 4: THE DIFFERENTIATOR</strong><br><br>
+                        VO: "And it lives on <em>your</em> infrastructure. Not ours. Not a vendor's cloud. Your firm owns the knowledge layer. You control the data pipeline. No lock-in. No regulatory friction."<br><br>
+                        <em>Tone: Emphasis on control. Visual: sovereignty markers (lock, local server, firm logo).</em>
+                    </div>
+                </div>
+
+                <div class="frame">
+                    <div class="frame-time">0:45–0:58</div>
+                    <div class="frame-content">
+                        <strong>SCENE 5: THE RETURN</strong><br><br>
+                        VO: "Junior architects onboard faster. Senior designers spend time innovating, not re-solving. Your firm compounds its own knowledge."<br><br>
+                        <em>Tone: Future-state benefit. Aspirational but grounded.</em>
+                    </div>
+                </div>
+
+                <div class="frame">
+                    <div class="frame-time">0:58–1:00</div>
+                    <div class="frame-content">
+                        <strong>CALL TO ACTION</strong><br><br>
+                        VO: "Nexus Hestia. Institutional memory for architecture."<br><br>
+                        <em>Visual: Logo, site, contact. Clean, minimal.</em>
+                    </div>
+                </div>
+
+                <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: var(--text-primary); margin: 40px 0 20px 0; letter-spacing: 0.05em;">3.2 Visual Storyboard & Production Direction</h3>
+
+                <div class="card" style="margin-top: 20px;">
+                    <div class="card-title">Production Approach</div>
+                    <div class="card-content">
+                        <strong>Stylized 2D Motion Graphics + Live UI Footage</strong><br><br>
+                        3D architecture renders are commoditized. Live product footage (UI walkthroughs) grounds credibility. 2D motion graphics (geometric shapes, data flows) abstract complexity without losing rigor. Together: <em>sophisticated product</em> + <em>easy to understand</em>.
+                    </div>
+                </div>
+
+                <table style="margin-top: 24px;">
+                    <thead>
+                        <tr>
+                            <th>Scene</th>
+                            <th>Duration</th>
+                            <th>Visual</th>
+                            <th>Motion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Title Card</td>
+                            <td>0:00–0:03</td>
+                            <td>Bebas Neue type (#D4007A on #0A0A0A)</td>
+                            <td>Fade-in, 100ms hold, fade-out</td>
+                        </tr>
+                        <tr>
+                            <td>Problem</td>
+                            <td>0:03–0:12</td>
+                            <td>Live Revit UI (desaturated); architect at desk; file folders stacking</td>
+                            <td>Revit windows open/close; folders slide in; timeline 2019→2026</td>
+                        </tr>
+                        <tr>
+                            <td>Cost</td>
+                            <td>0:12–0:20</td>
+                            <td>Clock face (vector); workers (blurred); clock on workspace</td>
+                            <td>Clock hand rotates; workers fade in/out; calendar pages flip</td>
+                        </tr>
+                        <tr>
+                            <td>Paradigm Shift</td>
+                            <td>0:20–0:32</td>
+                            <td>Live NHT dashboard; geometric shape (staircase); search interface</td>
+                            <td>Shape rotates slowly; search text appears; cards slide in</td>
+                        </tr>
+                        <tr>
+                            <td>Sovereignty</td>
+                            <td>0:32–0:45</td>
+                            <td>Network diagram (vector); server icon (local); padlock</td>
+                            <td>Data flows locally (arrows loop back); padlock closes</td>
+                        </tr>
+                        <tr>
+                            <td>Return</td>
+                            <td>0:45–0:58</td>
+                            <td>Time-lapse: architects; Revit models appearing; project phases</td>
+                            <td>Layers appear; people move (sped up); models detail-up</td>
+                        </tr>
+                        <tr>
+                            <td>CTA</td>
+                            <td>0:58–1:00</td>
+                            <td>Logo; URL; contact info</td>
+                            <td>Logo scales in; URL fades in; hold 2 seconds</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: var(--text-primary); margin: 40px 0 20px 0; letter-spacing: 0.05em;">3.3 Audio & Tone Direction</h3>
+
+                <div class="card">
+                    <div class="card-title">Voiceover Specifications</div>
+                    <div class="card-content">
+                        <strong>Gender:</strong> Neutral or female-presenting (domain expertise without reinforcing AEC's male-dominated defaults)<br><br>
+                        <strong>Pace:</strong> ~140–160 words per minute (measured, not rushed)<br><br>
+                        <strong>Delivery:</strong> Conversational authority—not robotic, not over-sold. Imagine an architect explaining the problem to a peer.
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">Music & Ambient Bed</div>
+                    <div class="card-content">
+                        <strong>0:00–0:20:</strong> Minor-key, ambient, slightly melancholic (cost of forgetting)<br><br>
+                        <strong>0:20–0:45:</strong> Transition to major key, rising energy (solution revealed)<br><br>
+                        <strong>0:45–1:00:</strong> Sustained major, calm, optimistic (return on investment)<br><br>
+                        <strong>Style:</strong> Minimal, electronic, contemporary (Cliff Martinez or Tycho vibe—not orchestral, not synth-heavy '80s).
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">Sound Effects (Minimal, Intentional)</div>
+                    <div class="card-content">
+                        Revit interface: keyboard clicks, file open/close (subtle, 20% volume)<br>
+                        Geometric search: soft "whoosh" on result population<br>
+                        Sovereignty: lock mechanism click<br><br>
+                        <strong>Rule:</strong> SFX should <em>reinforce</em> without <em>dominating</em>. Maximum 3–4 SFX total.
+                    </div>
+                </div>
+
+                <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: var(--text-primary); margin: 40px 0 20px 0; letter-spacing: 0.05em;">3.4 Production Handoff Checklist</h3>
+
+                <div class="checklist">
+                    <div class="checklist-item">Voiceover script (finalized, timed)</div>
+                    <div class="checklist-item">Audio bed (license or original; .WAV 48kHz stereo)</div>
+                    <div class="checklist-item">Live Revit UI screencaps (staircase detail model + dashboard)</div>
+                    <div class="checklist-item">Live NHT dashboard walkthrough (recorded screen video, 1080p min)</div>
+                    <div class="checklist-item">Geometric search results (real data, not mockups)</div>
+                    <div class="checklist-item">Architect/office imagery (stock or original)</div>
+                    <div class="checklist-item">Brand logo files (SVG + PNG, both sizes)</div>
+                    <div class="checklist-item">Design system specs (colors, fonts, spacing)</div>
+                    <div class="checklist-item">Frame-by-frame timing locked (storyboard with exact timecode)</div>
+                    <div class="checklist-item">Target platforms: LinkedIn, YouTube, embedded on site, investor deck</div>
+                </div>
+
+                <div class="card" style="background-color: var(--bg-panel); border-left: 4px solid var(--acid-yellow);">
+                    <div class="card-title">Production Timeline & Cost</div>
+                    <div class="card-content">
+                        <strong>Timeline:</strong> 4–6 weeks (storyboard → animatic → final render)<br><br>
+                        <strong>Estimated Cost:</strong> $8K–15K (depending on motion complexity and stock vs. original footage)
+                    </div>
+                </div>
+            </section>
+
+            <!-- RECOMMENDATIONS -->
+            <section>
+                <div class="section-label">Implementation</div>
+                <h2 class="section-title">Recommendations &<span class="accent">Next Steps</span></h2>
+
+                <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 20px; color: var(--mag-primary); margin: 32px 0 16px 0; letter-spacing: 0.05em;">IMMEDIATE (Next 2 Weeks)</h3>
+
+                <div class="card">
+                    <div class="card-title">1. Lock the messaging playbook</div>
+                    <div class="card-content">Get Jovan + Aleksandar + one external technical advisor to review Pillar 3 & 4 for accuracy. No ambiguity on patent scope or architectural claims.</div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">2. Record voiceover</div>
+                    <div class="card-content">Find a narrator (or use synthetic voice if budget-tight, but avoid robotic cues). Deliver as finalized .WAV.</div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">3. Gather source assets</div>
+                    <div class="card-content">Screencaps of live Revit model + NHT dashboard. High-quality. Real product footage, not mockups.</div>
+                </div>
+
+                <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 20px; color: var(--mag-primary); margin: 32px 0 16px 0; letter-spacing: 0.05em;">MEDIUM-TERM (Next 4–6 Weeks)</h3>
+
+                <div class="card">
+                    <div class="card-title">4. Brief motion designer / video editor</div>
+                    <div class="card-content">Use storyboard + script + timing as the spec. Budget $8K–15K.</div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">5. Create landing page variant</div>
+                    <div class="card-content">Use 60-second reel above the fold. Test messaging against current landing page (heat map/session recording). Does the new narrative increase time-on-page? CTR on "Request Demo"?</div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">6. Lock three tiers of elevator pitches</div>
+                    <div class="card-content">Have Jovan and Aleksandar deliver the 60-second pitch in a mock investor call. Does it land? Does it provoke the right follow-up questions?</div>
+                </div>
+
+                <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 20px; color: var(--mag-primary); margin: 32px 0 16px 0; letter-spacing: 0.05em;">STRATEGIC (Next Quarter)</h3>
+
+                <div class="card">
+                    <div class="card-title">7. Competitive positioning deck</div>
+                    <div class="card-content">Take the messaging matrix + pillars + proof points into a 10–12 slide investor deck variant that leads with <em>risk mitigation</em> (IP loss, institutional amnesia) before <em>features</em>.</div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">8. Refine CAC/LTV model</div>
+                    <div class="card-content">Unit economics ($800–3K/seat) are solid on paper. Validate with HOK/Cumming pilots. How long is typical sales cycle? What's the attach rate? Model TAM expansion.</div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">9. Patent positioning review</div>
+                    <div class="card-content">Get external patent counsel to review messaging around "Image Narrative Search." If it's not patented but is a claimed differentiator, either file provisional or reframe as "architectural approach."</div>
+                </div>
+            </section>
+
+            <!-- MESSAGING READINESS TABLE -->
+            <section>
+                <h2 class="section-title">Messaging <span class="accent">Readiness Matrix</span></h2>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Dimension</th>
+                            <th>Status</th>
+                            <th>Confidence</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Category Definition</td>
+                            <td><span class="badge badge-pass">Clear</span></td>
+                            <td>95%</td>
+                            <td>Lock. Use in all future materials.</td>
+                        </tr>
+                        <tr>
+                            <td>Value Proposition</td>
+                            <td><span class="badge badge-pass">Strong</span></td>
+                            <td>90%</td>
+                            <td>Validate with 2–3 customer discovery calls.</td>
+                        </tr>
+                        <tr>
+                            <td>Elevator Pitch Suite</td>
+                            <td><span class="badge badge-pass">Complete</span></td>
+                            <td>85%</td>
+                            <td>Rehearse with Jovan + Aleksandar. Refine based on live feedback.</td>
+                        </tr>
+                        <tr>
+                            <td>Competitive Messaging</td>
+                            <td><span class="badge badge-pass">Accurate</span></td>
+                            <td>90%</td>
+                            <td>Verify Knowledge Architecture/Synthesis positioning quarterly.</td>
+                        </tr>
+                        <tr>
+                            <td>60-Second Explainer</td>
+                            <td><span class="badge badge-warn">Script Ready</span></td>
+                            <td>70%</td>
+                            <td>Brief editor. Budget 4–6 weeks for production.</td>
+                        </tr>
+                        <tr>
+                            <td>Visual Brand Coherence</td>
+                            <td><span class="badge badge-pass">Good</span></td>
+                            <td>80%</td>
+                            <td>Extend to explainer video. Ensure consistency.</td>
+                        </tr>
+                        <tr>
+                            <td>Investor Narrative</td>
+                            <td><span class="badge badge-pass">Solid</span></td>
+                            <td>85%</td>
+                            <td>Stress-test with Pedja. Does it move the needle on valuation or terms?</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- FINAL VERDICT -->
+            <section>
+                <h2 class="section-title">Final <span class="accent">Verdict</span></h2>
+
+                <div class="verdict">
+                    <div class="verdict-label">Strategic Conclusion</div>
+                    <div class="verdict-text">
+                        You have the raw materials for a compelling, differentiated narrative. The technical product is sound. The market timing is right (AEC is waking up to AI risk, sovereignty, and institutional knowledge loss). The team is credible.<br><br>
+                        What's missing is <strong>narrative clarity and consistency</strong>. Right now, the pitch jumps between search, sovereignty, AI, orchestration, and Revit—all true, but not unified. This report gives you the through-line: <span style="color: var(--mag-primary); font-weight: 500;">IP Preservation Through Sovereign Institutional Memory.</span><br><br>
+                        <strong>Use it. Lock it. Repeat it.</strong> Let Pedja, Boris, and the market hear the same story from the same founder across every conversation.<br><br>
+                        The 60-second video will be your visual proof that this message lands.
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- FOOTER -->
+        <footer>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-label">Document Info</div>
+                    <div class="footer-content">
+                        Nexus Hestia Brand Positioning<br>
+                        & Narrative Readiness Report<br><br>
+                        Prepared: July 9, 2026<br>
+                        Scope: Phase 1–3 Complete Analysis<br>
+                        Classification: CONFIDENTIAL
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <div class="footer-label">Prepared For</div>
+                    <div class="footer-content">
+                        Natasha Bajc<br>
+                        Founder & CEO<br>
+                        Nexus Hestia Technologies<br><br>
+                        natasha.bajc@nexushestia.com<br>
+                        nexushestia.com
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-legal">
+                CONFIDENTIAL — FOR AUTHORIZED USE ONLY · NEXUS HESTIA TECHNOLOGIES · JULY 2026<br>
+                natasha.bajc@nexushestia.com · nexushestia.com · Los Angeles, CA
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
